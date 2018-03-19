@@ -27,6 +27,7 @@ public class CoreTestCase extends TestCase
         driver = new AndroidDriver(new URL(AppiumURL), DesiredCapabilities);
     }
 
+    @Override
     protected void tearDown() throws Exception
     {
         driver.quit();
