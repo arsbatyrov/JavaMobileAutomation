@@ -1,22 +1,9 @@
 import lib.CoreTestCase;
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ScreenOrientation;
-import org.openqa.selenium.WebElement;
 import lib.ui.*;
 
 public class FirstTest extends CoreTestCase
 {
-    private MainPageObject MainPageObject;
-
-    protected void setUp() throws Exception
-    {
-        super.setUp();
-
-        MainPageObject = new MainPageObject(driver);
-    }
-
     @Test
     public void testSearch()
     {
@@ -48,7 +35,7 @@ public class FirstTest extends CoreTestCase
         ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
         String article_title = ArticlePageObject.getArticleTitle();
 
-        Assert.assertEquals(
+        assertEquals(
                 "We see unexpected title!",
                 "Java (programming language)",
                 article_title
@@ -102,7 +89,7 @@ public class FirstTest extends CoreTestCase
         SearchPageObject.typeSearchLine(search_line);
         int amount_of_search_results = SearchPageObject.getAmountOfFoundArticles();
 
-        Assert.assertTrue(
+        assertTrue(
                 "We found too few results!",
                 amount_of_search_results > 0
         );
@@ -134,7 +121,7 @@ public class FirstTest extends CoreTestCase
         this.rotateScreenLandscape();
 
         String title_after_rotation = ArticlePageObject.getArticleTitle();
-        Assert.assertEquals(
+        assertEquals(
                 "Article title have been changed after screen rotation",
                 title_before_rotation,
                 title_after_rotation
@@ -143,7 +130,7 @@ public class FirstTest extends CoreTestCase
         this.rotateScreenPortrait();
 
         String title_after_second_rotation = ArticlePageObject.getArticleTitle();
-        Assert.assertEquals(
+        assertEquals(
                 "Article title have been changed after screen rotation",
                 title_before_rotation,
                 title_after_second_rotation
