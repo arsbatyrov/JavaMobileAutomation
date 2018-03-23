@@ -30,6 +30,7 @@ public class SearchPageObject extends MainPageObject
 
     public void typeSearchLine(String search_line)
     {
+        this.waitForElementAndClear(By.xpath(SEARCH_INPUT), "Cannot find and type into search input", 5);
         this.waitForElementAndSendKeys(By.xpath(SEARCH_INPUT), search_line, "Cannot find and type into search input", 5);
     }
 
