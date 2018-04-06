@@ -1,8 +1,7 @@
+import junit.framework.TestSuite;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import suites.TestSuite;
-
 
 public class Runner
 {
