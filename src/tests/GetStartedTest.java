@@ -9,6 +9,10 @@ public class GetStartedTest extends CoreTestCase
     @Test
     public void testPassThroughWelcome()
     {
+        if (this.Platform.isAndroid()) {
+            return;
+        }
+
         WelcomePageObject WelcomePage = new WelcomePageObject(driver);
 
         WelcomePage.waitForLearnMoreLink();
