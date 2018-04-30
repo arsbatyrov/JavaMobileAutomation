@@ -7,14 +7,12 @@ import org.openqa.selenium.ScreenOrientation;
 public class CoreTestCase extends TestCase
 {
     protected AppiumDriver driver;
-    protected Platform Platform;
 
     @Override
     protected void setUp() throws Exception
     {
         super.setUp();
-        this.Platform = new Platform();
-        driver = this.Platform.getDriver();
+        driver = Platform.getInstance().getDriver();
         this.rotateScreenPortrait();
     }
 
