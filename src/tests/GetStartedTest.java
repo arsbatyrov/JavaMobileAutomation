@@ -7,6 +7,13 @@ import org.junit.Test;
 
 public class GetStartedTest extends CoreTestCase
 {
+    @Override
+    protected void setUp() throws Exception
+    {
+        driver = Platform.getInstance().getDriver();
+        this.rotateScreenPortrait();
+    }
+
     @Test
     public void testPassThroughWelcome()
     {
